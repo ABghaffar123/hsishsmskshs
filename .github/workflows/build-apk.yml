@@ -12,6 +12,10 @@ jobs:
     name: Build APK
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: vidmate_app
+
     steps:
       - uses: actions/checkout@v4
 
