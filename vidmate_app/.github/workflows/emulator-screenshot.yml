@@ -1,0 +1,62 @@
+name: Flutter Emulator Screenshot
+
+on:
+  workflow_dispatch:
+
+jobs:
+  screenshot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 'stable'
+          channel: 'stable'
+          cache: true
+          cache-key: "flutter-:os:-:channel:-:version:-:arch:-:hash:"
+
+      - name: Get dependencies
+        run: flutter pub get
+
+      - name: Enable KVM for Android emulator
+        run: |
+          echo "::group::KVM Setup"
+          sudo apt-get update && sudo apt-get install qemu-kvm -y
+          sudo chown $USER:/dev/kvm /dev/kvm
+          echo "::endgroup::"
+
+      - name: Run Android Emulator and take screenshot
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 33
+          arch: x86_64
+          profile: pixel_6
+          disable-animations: true
+          script: |
+            if [ -d "integration_test" ]; then
+              flutter test integration_test
+            else
+              flutter build apk --debug
+              adb install build/app/outputs/flutter-apk/app-debug.apk
+              adb shell am start -n "com.example.vidmate_app/com.example.vidmate_app.MainActivity"
+            fi
+
+      - name: Take emulator screenshot
+        if: always()
+        run: adb exec-out screencap -p > emulator.png
+
+      - name: Upload emulator screenshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: emulator-screenshot
+          path: emulator.png

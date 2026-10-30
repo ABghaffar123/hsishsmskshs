@@ -1,2 +1,4 @@
 - [download_flow_fixes](download_flow_fixes.md) — Summary of fixes applied to VidiMate home screen download flow
 - [pagination_fix_discover_screen](pagination_fix_discover_screen.md) — Added pagination (Load More) to discover_screen.dart for Trending, Search, and Category lists using ScrollController
+- [github-repo-name](github_repo_name.md) — GitHub repository name and URL for the VidiMate Flutter project (ABghaffar123/hsishsmskshs)
+- [apk_build_process](apk_build_process.md) — APK build workflow steps, how to trigger, and known gitlink blocker fix

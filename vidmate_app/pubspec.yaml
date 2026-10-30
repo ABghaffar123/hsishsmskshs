@@ -1,0 +1,68 @@
+name: vidmate_app
+description: "A new Flutter project."
+# The following line prevents the package from being accidentally published to
+# pub.dev using `pub pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# Version increment for bug fixes (Rule: LAZMI update version)
+version: 1.2.13+14
+
+environment:
+  sdk: ^3.13.2
+
+# Dependencies specify other packages that your package needs in order to work.
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # The following adds the Cupertino Icons font to your application.
+  cupertino_icons: ^1.0.8
+
+  # State management
+  riverpod: ^2.5.0
+  riverpod_annotation: ^2.0.0
+  provider: ^6.0.0
+
+  # Navigation
+  go_router: ^13.2.0
+
+  # Local database
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+
+  # Skeleton loading
+  shimmer: ^3.0.0
+
+  # Video/Audio player
+  just_audio: ^0.9.35
+  just_audio_background: 0.0.1-beta.17
+  media_kit: ^1.0.0
+  media_kit_video: ^1.0.0
+
+  # HTTP client
+  dio: ^5.3.3
+
+  # File system
+  path_provider: ^2.1.6
+  permission_handler: ^11.3.1
+  flutter_local_notifications: ^17.1.0
+  local_auth: ^2.1.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+
+flutter:
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in the
+  # material Icons class.
+  uses-material-design: true
+
+  # Assets configuration
+  assets:
+    - assets/images/
+    - assets/thumbnails/
+    - assets/icons/
+    - assets/videos/
