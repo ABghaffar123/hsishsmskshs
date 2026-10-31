@@ -31,7 +31,8 @@ jobs:
         run: flutter pub get
 
       - name: Run analyzer
-        run: flutter analyze || echo "Analyzer found warnings but proceeding with build"
+        run: flutter analyze || true
+        continue-on-error: true
 
       - name: Build Release APK
         run: flutter build apk --release
