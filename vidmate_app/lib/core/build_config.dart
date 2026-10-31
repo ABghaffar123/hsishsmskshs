@@ -6,9 +6,9 @@ class BuildConfig {
   // PERMANENT FIX: Previously hardcoded '1.0.21' here caused APK builds
   // to show stale version 1.0.21 even after pubspec.yaml was bumped to 1.0.30+22.
   // Now reads dynamically from pubspec.yaml via BuildConfigInitializer.
-  static const String version = '1.2.11';
-  static const String buildNumber = '12';
-  static const String fullVersion = '1.2.11+12';
+  static const String version = '1.2.14';
+  static const String buildNumber = '15';
+  static const String fullVersion = '1.2.14+15';
 
   // Backend configuration - real backend URL on the local network.
   // API key matches config.API_KEY in the backend (config.py default).
