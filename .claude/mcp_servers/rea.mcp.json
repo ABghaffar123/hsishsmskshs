@@ -1,0 +1,13 @@
+{
+  "name": "io.github.morluto/rea",
+  "type": "stdio",
+  "command": "node",
+  "args": [
+    "F:/claude_code-skills/REA/node_modules/.bin/rea-agents",
+    "mcp"
+  ],
+  "env": {
+    "GHIDRA_INSTALL_DIR": "F:\\claude_code-Skills\\REA\\ghidra_12.2_PUBLIC_20261016\\ghidra_12.2_PUBLIC",
+    "JAVA_HOME": "F:\\jdk25"
+  }
+}

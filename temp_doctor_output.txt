@@ -1,0 +1,236 @@
+﻿healthy: false
+environment_healthy: false
+scope:
+  mode: audit-wide
+  clients: []
+  providers: []
+  skill: false
+  target: null
+scope_checks[7]:
+  - name: node
+    ok: true
+    classification: healthy
+    detail: 26.13.0
+    details:
+      runtime: node
+      version: 26.13.0
+  - name: host
+    ok: true
+    classification: healthy
+    detail: win32 x64
+  - name: hopper
+    ok: false
+    classification: missing_analysis_engine
+    remediation: "Run rea setup to install Hopper, or set HOPPER_LAUNCHER_PATH."
+  - name: ghidra
+    ok: false
+    classification: missing_analysis_engine
+    detail: GHIDRA_INSTALL_DIR is not set
+    remediation: Set GHIDRA_INSTALL_DIR to an extracted Ghidra 12.1.x release directory.
+  - name: ida-registration
+    ok: false
+    classification: missing_analysis_engine
+    detail: IDA MCP registration is not configured.
+    remediation: Set REA_IDA_MCP_CONFIG to your upstream IDA MCP registration JSON; see docs/ida-provider.md.
+  - name: jadx
+    ok: false
+    classification: missing_analysis_engine
+    detail: Set REA_JADX_MCP_JAR to the absolute path of a caller-supplied jadx-headless-mcp 0.7.1 JAR. REA does not download or install it.
+    remediation: Set REA_JADX_MCP_JAR to the absolute path of a caller-supplied jadx-headless-mcp 0.7.1 JAR. REA does not download or install it.
+  - name: kuna-installation
+    ok: false
+    classification: missing_analysis_engine
+    detail: "Set REA_KUNA_COMMAND to the absolute path of a caller-supplied kuna executable (verified with 1.833). REA does not download, install or update Kuna."
+    remediation: "Set REA_KUNA_COMMAND to the absolute path of a caller-supplied kuna executable (verified with 1.833). REA does not download, install or update Kuna."
+    details:
+      configured: false
+informational_checks: []
+providerInspections[4]:
+  - id: ghidra
+    configured: false
+    available: false
+    providerVersion: null
+    registrationEnvironment:
+    checks[1]{name,ok,code,detail,remediation,classification}:
+      configuration,false,not_configured,GHIDRA_INSTALL_DIR is not set,Set GHIDRA_INSTALL_DIR to an extracted Ghidra 12.1.x release directory.,missing_analysis_engine
+  - id: ida
+    configured: false
+    available: false
+    providerVersion: null
+    registrationEnvironment:
+    checks[1]{name,ok,code,detail,remediation,classification}:
+      registration,false,not_configured,IDA MCP registration is not configured.,Set REA_IDA_MCP_CONFIG to your upstream IDA MCP registration JSON; see docs/ida-provider.md.,missing_analysis_engine
+  - id: jadx
+    configured: false
+    available: false
+    providerVersion: null
+    registrationEnvironment:
+    checks[1]{name,ok,code,detail,remediation,classification}:
+      configuration,false,not_configured,Set REA_JADX_MCP_JAR to the absolute path of a caller-supplied jadx-headless-mcp 0.7.1 JAR. REA does not download or install it.,Set REA_JADX_MCP_JAR to the absolute path of a caller-supplied jadx-headless-mcp 0.7.1 JAR. REA does not download or install it.,missing_analysis_engine
+  - id: kuna
+    configured: false
+    available: false
+    providerVersion: null
+    registrationEnvironment:
+    checks[1]:
+      - name: installation
+        ok: false
+        code: not_configured
+        detail: "Set REA_KUNA_COMMAND to the absolute path of a caller-supplied kuna executable (verified with 1.833). REA does not download, install or update Kuna."
+        remediation: "Set REA_KUNA_COMMAND to the absolute path of a caller-supplied kuna executable (verified with 1.833). REA does not download, install or update Kuna."
+        classification: missing_analysis_engine
+        details:
+          configured: false
+checks[7]:
+  - name: node
+    ok: true
+    classification: healthy
+    detail: 26.13.0
+    details:
+      runtime: node
+      version: 26.13.0
+  - name: host
+    ok: true
+    classification: healthy
+    detail: win32 x64
+  - name: hopper
+    ok: false
+    classification: missing_analysis_engine
+    remediation: "Run rea setup to install Hopper, or set HOPPER_LAUNCHER_PATH."
+  - name: ghidra
+    ok: false
+    classification: missing_analysis_engine
+    detail: GHIDRA_INSTALL_DIR is not set
+    remediation: Set GHIDRA_INSTALL_DIR to an extracted Ghidra 12.1.x release directory.
+  - name: ida-registration
+    ok: false
+    classification: missing_analysis_engine
+    detail: IDA MCP registration is not configured.
+    remediation: Set REA_IDA_MCP_CONFIG to your upstream IDA MCP registration JSON; see docs/ida-provider.md.
+  - name: jadx
+    ok: false
+    classification: missing_analysis_engine
+    detail: Set REA_JADX_MCP_JAR to the absolute path of a caller-supplied jadx-headless-mcp 0.7.1 JAR. REA does not download or install it.
+    remediation: Set REA_JADX_MCP_JAR to the absolute path of a caller-supplied jadx-headless-mcp 0.7.1 JAR. REA does not download or install it.
+  - name: kuna-installation
+    ok: false
+    classification: missing_analysis_engine
+    detail: "Set REA_KUNA_COMMAND to the absolute path of a caller-supplied kuna executable (verified with 1.833). REA does not download, install or update Kuna."
+    remediation: "Set REA_KUNA_COMMAND to the absolute path of a caller-supplied kuna executable (verified with 1.833). REA does not download, install or update Kuna."
+    details:
+      configured: false
+identity:
+  cli_package_version: 6.8.0
+  expected_skill_version: "49"
+  sdk:
+    server: 2.3.1
+    client_test: 2.3.1
+    core: 2.3.1
+  catalog:
+    counts:
+      cli_commands: 175
+      mcp_tools: 229
+      mcp_prompts: 6
+    digests:
+      tools_sha256: a98940ba69acd9c1781d180cee362d4ddab18f77eefdd3e3216f10e1bf98e5e9
+      prompts_sha256: 9609379442110570cd52fdea61a777242350873bc28958f54827ca3590e680b7
+      combined_sha256: fe938a7c6eba3763b22ae2022de76dc4a7812d35d86f1d4efd36b9962b04da0b
+  live_server:
+    state: unknown
+    remediation: Call binary_session in the active client to inspect the running server identity.
+  installations:
+    paths[2]: "C:\\Users\\Lenovo\\AppData\\Local\\npm-cache\\_npx\\9b9809298fe40d2c\\node_modules\\.bin\\rea","C:\\Users\\Lenovo\\AppData\\Local\\npm-cache\\_npx\\9b9809298fe40d2c\\node_modules\\.bin\\rea.cmd"
+    state: multiple
+  skill:
+    installed_version: "49"
+    installed_tool_count: 229
+    state: aligned
+    remediation: null
+  registrations[6]:
+    - client: claude_code
+      config_path: "C:\\Users\\Lenovo\\.claude.json"
+      command[7]: cmd.exe,/d,/c,npx,"-y",rea-agents@6.8.0,mcp
+      package_reference: rea-agents@6.8.0
+      state: aligned
+      remediation: null
+    - client: claude_desktop
+      config_path: "C:\\Users\\Lenovo\\AppData\\Local\\Packages\\Claude_pzs8sxrjxfjjc\\LocalCache\\Roaming\\Claude\\claude_desktop_config.json"
+      command[7]: cmd.exe,/d,/c,npx,"-y",rea-agents@6.8.0,mcp
+      package_reference: rea-agents@6.8.0
+      state: aligned
+      remediation: null
+    - client: copilot_cli
+      config_path: "C:\\Users\\Lenovo\\.copilot\\mcp-config.json"
+      command[7]: cmd.exe,/d,/c,npx,"-y",rea-agents@6.8.0,mcp
+      package_reference: rea-agents@6.8.0
+      state: aligned
+      remediation: null
+    - client: dsh
+      config_path: "C:\\Users\\Lenovo\\.dsh\\cordis.patch.yml"
+      command[7]: cmd.exe,/d,/c,npx,"-y",rea-agents@6.8.0,mcp
+      package_reference: rea-agents@6.8.0
+      state: aligned
+      remediation: null
+    - client: freebuff
+      config_path: "C:\\Users\\Lenovo\\.agents\\mcp.json"
+      command[7]: cmd.exe,/d,/c,npx,"-y",rea-agents@6.8.0,mcp
+      package_reference: rea-agents@6.8.0
+      state: aligned
+      remediation: null
+    - client: vscode
+      config_path: "C:\\Users\\Lenovo\\AppData\\Roaming\\Code\\User\\mcp.json"
+      command[7]: cmd.exe,/d,/c,npx,"-y",rea-agents@6.8.0,mcp
+      package_reference: rea-agents@6.8.0
+      state: aligned
+      remediation: null
+Resolving dependencies...
+Downloading packages...
+  archive 4.5.2 (4.6.0 available)
+  audio_session 0.1.25 (0.2.4 available)
+  code_assets 2.1.0 (2.2.0 available)
+  cupertino_icons 1.0.9 (2.0.0 available)
+  dbus 0.7.15 (0.8.0 available)
+  flutter_cache_manager 3.4.6 (3.5.0 available)
+  flutter_local_notifications 17.2.4 (23.0.0 available)
+  flutter_local_notifications_linux 4.0.1 (9.0.0 available)
+  flutter_local_notifications_platform_interface 7.2.0 (13.0.0 available)
+  go_router 13.2.5 (18.1.3 available)
+  jni 1.1.1 (1.1.2 available)
+  just_audio 0.9.46 (0.10.6 available)
+  local_auth 2.3.0 (3.0.2 available)
+  local_auth_android 1.0.56 (2.3.0 available)
+  local_auth_darwin 1.6.1 (2.0.5 available)
+  local_auth_windows 1.0.11 (2.0.2 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  media_kit_video 1.3.1 (2.0.1 available)
+  objective_c 9.6.2 (9.6.3 available)
+  permission_handler 11.4.0 (13.0.2 available)
+  permission_handler_android 12.1.0 (14.1.1 available)
+  permission_handler_apple 9.6.4 (9.6.5 available)
+  permission_handler_windows 0.2.2 (0.2.4 available)
+  riverpod 2.6.1 (3.5.0 available)
+  riverpod_annotation 2.6.1 (4.0.8 available)
+  shimmer 3.0.0 (4.0.0 available)
+  sqflite_common 2.5.14 (2.5.15 available)
+  sqflite_darwin 2.4.4+1 (2.4.5 available)
+  synchronized 3.5.0 (3.6.1 available)
+  test_api 0.7.12 (0.7.15 available)
+  timezone 0.9.4 (0.11.2 available)
+  wakelock_plus 1.8.0 (1.8.2 available)
+Got dependencies!
+32 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+Running Gradle task 'assembleRelease'...                        
+
+ERROR: JAVA_HOME is set to an invalid directory: F:\jdk25\bin
+
+Please set the JAVA_HOME variable in your environment to match the
+location of your Java installation.
+Running Gradle task 'assembleRelease'...                           529ms
+flutter : Gradle task assembleRelease failed with exit code 1
+At line:1 char:302
++ ...  'PlainText' } catch {} } }; flutter build apk --release 2>&1 | Out-F ...
++                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Gradle task ass...ith exit code 1:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
