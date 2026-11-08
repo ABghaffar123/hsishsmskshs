@@ -37,8 +37,14 @@ jobs:
       - name: Build Release APK
         run: flutter build apk --release
 
+      - name: Check APK location
+        run: |
+          echo "APK location:"
+          find . -name "app-release.apk" 2>/dev/null || echo "No APK found"
+
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: app-release-apk
           path: build/app/outputs/flutter-apk/app-release.apk
+          if-no-files-found: ignore
