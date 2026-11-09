@@ -50,11 +50,11 @@ jobs:
       - name: Build APK (release)
         run: flutter build apk --release
 
-      - name: Debug: List built APK files
+      - name: Debug: List built APK files in repo-root view
         run: |
-          ls -lh build/app/outputs/flutter-apk/
+          ls -lh vidmate_app/build/app/outputs/flutter-apk/
           echo "=== Found APK files ==="
-          find build/app/outputs/flutter-apk/ -name "*.apk" -type f
+          find vidmate_app/build/app/outputs/flutter-apk/ -name "*.apk" -type f
 
       - name: Show APK files
         if: always()
