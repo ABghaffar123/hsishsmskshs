@@ -56,15 +56,6 @@ jobs:
           echo "=== Found APK files ==="
           find vidmate_app/build/app/outputs/flutter-apk/ -name "*.apk" -type f
 
-      - name: Show APK files
-        if: always()
-        run: |
-          echo "Searching for APK files..."
-          find . -name "*.apk" -print
-
-      - name: Debug: List built APK files in repo-root view
-        run: find vidmate_app/build -name "*.apk"
-
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
