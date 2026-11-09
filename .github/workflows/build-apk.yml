@@ -15,7 +15,6 @@ jobs:
   build:
     name: Build APK
     runs-on: ubuntu-latest
-    working-directory: vidmate_app
 
     steps:
       - uses: actions/checkout@v4
@@ -33,13 +32,13 @@ jobs:
           cache: true
 
       - name: Flutter pub get
-        run: flutter pub get
+        run: cd vidmate_app && flutter pub get
 
       - name: Flutter analyze
-        run: flutter analyze
+        run: cd vidmate_app && flutter analyze
 
       - name: Build APK (release - universal)
-        run: flutter build apk --release --split-per-abi=false
+        run: cd vidmate_app && flutter build apk --release --split-per-abi=false
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
