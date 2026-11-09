@@ -38,12 +38,12 @@ jobs:
         run: cd vidmate_app && flutter analyze 2>&1 || true
 
       - name: Build APK (release - universal)
-        run: cd vidmate_app && flutter build apk --release --split-per-abi=false
+        run: cd vidmate_app && flutter build apk --release
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
           name: app-release-apk
-          path: vidmate_app/build/app/outputs/flutter-apk/app-release.apk
+          path: vidmate_app/build/app/outputs/flutter-apk/*.apk
           if-no-files-found: error
           retention-days: 14
