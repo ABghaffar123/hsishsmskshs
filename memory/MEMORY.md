@@ -1,4 +1,3 @@
-- [download_flow_fixes](download_flow_fixes.md) — Summary of fixes applied to VidiMate home screen download flow
-- [pagination_fix_discover_screen](pagination_fix_discover_screen.md) — Added pagination (Load More) to discover_screen.dart for Trending, Search, and Category lists using ScrollController
-- [github-repo-name](github_repo_name.md) — GitHub repository name and URL for the VidiMate Flutter project (ABghaffar123/hsishsmskshs)
-- [apk_build_process](apk_build_process.md) — APK build workflow steps, how to trigger, and known gitlink blocker fix
+- [github-apk-build-init](github_apk_build_init.md) — APK build trigger kiya master branch par (commit b23e5f5, version 1.2.16+19), GitHub Actions logs dekhenge problem pata laganey ke liye
+- [apk-upload-fix](apk_upload_fix.md) — Upload artifact path fix kiya + debug step add kiya + version bump to 1.2.16+20 (commit 1e0eac9), ab APK upload successfully hoga
+- [apk-artifact-path-and-assets-fix](apk_artifact_path_and_assets_fix.md) — Workflow mein APK path theek kiya (`vidmate_app/build/...`), debug step add kiya, asset folders ke `.gitkeep` files create kiye

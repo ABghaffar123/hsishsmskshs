@@ -53,10 +53,13 @@ jobs:
           echo "Searching for APK files..."
           find . -name "*.apk" -print
 
+      - name: Debug: List built APK files in repo-root view
+        run: find vidmate_app/build -name "*.apk"
+
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
-          name: flutter-apk
-          path: build/app/outputs/flutter-apk/*.apk
+          name: app-release-apk
+          path: vidmate_app/build/app/outputs/flutter-apk/*.apk
           if-no-files-found: error
           retention-days: 14
