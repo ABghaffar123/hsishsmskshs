@@ -47,10 +47,16 @@ jobs:
           echo "=== Found APK files ==="
           find build/app/outputs/flutter-apk/ -name "*.apk" -type f
 
+      - name: Show APK files
+        if: always()
+        run: |
+          echo "Searching for APK files..."
+          find . -name "*.apk" -print
+
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
-          name: vidmate-release-apk
+          name: flutter-apk
           path: build/app/outputs/flutter-apk/*.apk
-          if-no-files-found: warn
+          if-no-files-found: error
           retention-days: 14
