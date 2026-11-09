@@ -39,7 +39,7 @@ jobs:
         run: flutter analyze
 
       - name: Build APK (release)
-        run: flutter build apk --release --split-per-abi
+        run: flutter build apk --release
 
       - name: Debug: List built APK files
         run: |
